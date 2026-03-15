@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0c0709">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Admin — Lina</title>
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap">
+</head>
+<body>
+
+<!-- ── SVG Sprite ── -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="ic-rose"    viewBox="0 0 24 24"><path d="M12 2C9 2 7 4 7 7c0 2.5 1.5 4.5 3.5 5.5L9 22h6l-1.5-9.5C15.5 11.5 17 9.5 17 7c0-3-2-5-5-5zm0 2c1.7 0 3 1.3 3 3 0 1.8-1.2 3.3-2.9 3.9L12 16l-.1-5.1C10.2 10.3 9 8.8 9 7c0-1.7 1.3-3 3-3z"/></symbol>
+  <symbol id="ic-book"    viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></symbol>
+  <symbol id="ic-image"   viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></symbol>
+  <symbol id="ic-note"    viewBox="0 0 24 24"><path d="M3 18h12v-2H3v2zm0-5h12v-2H3v2zm0-7v2h12V6H3zm14 10.59L19.17 14l1.42 1.41-4.59 4.59-2.83-2.83 1.41-1.41L17 16.59z"/></symbol>
+  <symbol id="ic-settings"viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></symbol>
+  <symbol id="ic-logout"  viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></symbol>
+  <symbol id="ic-add"     viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></symbol>
+  <symbol id="ic-edit"    viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></symbol>
+  <symbol id="ic-delete"  viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></symbol>
+  <symbol id="ic-close"   viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
+  <symbol id="ic-music"   viewBox="0 0 24 24"><path d="M9 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3H9z"/></symbol>
+  <symbol id="ic-upload"  viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></symbol>
+  <symbol id="ic-export"  viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z"/></symbol>
+  <symbol id="ic-save"    viewBox="0 0 24 24"><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/></symbol>
+  <symbol id="ic-photo"   viewBox="0 0 24 24"><path d="M12 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0 2c2.67 0 8 1.34 8 4v2H4v-2c0-2.66 5.33-4 8-4z"/></symbol>
+  <symbol id="ic-reset"   viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></symbol>
+  <symbol id="ic-tg"      viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></symbol>
+  <symbol id="ic-eye"     viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></symbol>
+  <symbol id="ic-cal"     viewBox="0 0 24 24"><path d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></symbol>
+  <symbol id="ic-test"    viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></symbol>
+</svg>
+
+<!-- ════════════════════════════════════════
+     LOGIN
+     ════════════════════════════════════════ -->
+<div class="login-screen" id="login-screen">
+  <div class="login-box">
+    <span class="login-logo">Lina</span>
+    <p class="login-sub">Dashboard Admin</p>
+    <div class="login-card">
+      <div class="form-group">
+        <label for="login-user">Username</label>
+        <input id="login-user" type="text" inputmode="text" autocomplete="username"
+               placeholder="Masukkan username..." autocorrect="off" autocapitalize="none">
+      </div>
+      <div class="form-group">
+        <label for="login-pass">Password <span style="color:var(--t3)">(opsional)</span></label>
+        <input id="login-pass" type="password" autocomplete="current-password"
+               placeholder="Kosongkan jika tidak ada...">
+      </div>
+      <button class="btn btn-primary" onclick="doLogin()">
+        <svg viewBox="0 0 24 24"><use href="#ic-rose"/></svg>
+        Masuk ke Dashboard
+      </button>
+      <p class="login-err" id="login-err"></p>
+    </div>
+    <p style="margin-top:1.5rem;font-family:var(--font-h);font-style:italic;color:var(--t3);font-size:.83rem;text-align:center;">
+      <a href="index.html" style="color:var(--rose-l);text-decoration:none;">
+        &larr; Kembali ke halaman utama
+      </a>
+    </p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     DASHBOARD
+     ════════════════════════════════════════ -->
+<div class="dashboard" id="dashboard">
+
+  <!-- Top bar -->
+  <header class="dash-top">
+    <span class="dash-logo">Lina</span>
+    <button class="dash-logout btn btn-sm btn-ghost" onclick="doLogout()" aria-label="Keluar">
+      <svg viewBox="0 0 24 24"><use href="#ic-logout"/></svg>
+      Keluar
+    </button>
+  </header>
+
+  <!-- Tab bar -->
+  <div class="dash-tabs" role="tablist">
+    <button class="dash-tab active" data-panel="panel-stories" onclick="switchPanel(this)" role="tab" aria-selected="true">
+      <svg viewBox="0 0 24 24"><use href="#ic-book"/></svg>
+      Cerita
+    </button>
+    <button class="dash-tab" data-panel="panel-gallery" onclick="switchPanel(this)" role="tab">
+      <svg viewBox="0 0 24 24"><use href="#ic-image"/></svg>
+      Galeri
+    </button>
+    <button class="dash-tab" data-panel="panel-note" onclick="switchPanel(this)" role="tab">
+      <svg viewBox="0 0 24 24"><use href="#ic-note"/></svg>
+      Catatan
+    </button>
+    <button class="dash-tab" data-panel="panel-settings" onclick="switchPanel(this)" role="tab">
+      <svg viewBox="0 0 24 24"><use href="#ic-settings"/></svg>
+      Setelan
+    </button>
+  </div>
+
+  <!-- Content -->
+  <main class="dash-content">
+
+    <!-- Stats -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-icon"><svg viewBox="0 0 24 24"><use href="#ic-book"/></svg></span>
+        <div class="stat-val" id="st-stories">0</div>
+        <div class="stat-lbl">Cerita</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon"><svg viewBox="0 0 24 24"><use href="#ic-image"/></svg></span>
+        <div class="stat-val" id="st-gallery">0</div>
+        <div class="stat-lbl">Foto Galeri</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon"><svg viewBox="0 0 24 24"><use href="#ic-music"/></svg></span>
+        <div class="stat-val" id="st-audio">0</div>
+        <div class="stat-lbl">Audio</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon"><svg viewBox="0 0 24 24"><use href="#ic-rose"/></svg></span>
+        <div class="stat-val" id="st-imgs">0</div>
+        <div class="stat-lbl">Total Gambar</div>
+      </div>
+    </div>
+
+    <!-- ── Panel: Stories ── -->
+    <div class="panel active" id="panel-stories" role="tabpanel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">Kelola Cerita</div>
+          <div class="panel-sub">Tambah, edit, dan hapus cerita penyesalan</div>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="openAddStory()">
+          <svg viewBox="0 0 24 24"><use href="#ic-add"/></svg>
+          Tambah
+        </button>
+      </div>
+      <div class="story-list" id="story-list"></div>
+    </div>
+
+    <!-- ── Panel: Gallery ── -->
+    <div class="panel" id="panel-gallery" role="tabpanel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">Kelola Galeri</div>
+          <div class="panel-sub">Tambah dan hapus foto kenangan</div>
+        </div>
+        <button class="btn btn-primary btn-sm" onclick="openAddGallery()">
+          <svg viewBox="0 0 24 24"><use href="#ic-add"/></svg>
+          Tambah
+        </button>
+      </div>
+      <div class="gal-admin-grid" id="gal-admin-grid"></div>
+    </div>
+
+    <!-- ── Panel: Note ── -->
+    <div class="panel" id="panel-note" role="tabpanel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">Catatan Tersembunyi</div>
+          <div class="panel-sub">Edit catatan 20 ribu yang dramatis</div>
+        </div>
+        <button class="btn btn-success btn-sm" onclick="saveNote()">
+          <svg viewBox="0 0 24 24"><use href="#ic-save"/></svg>
+          Simpan
+        </button>
+      </div>
+      <div class="form-group">
+        <label>Teks Catatan</label>
+        <textarea id="note-ta" rows="12" oninput="updateNotePreview()"
+                  placeholder="Tulis catatan di sini...">Apakah kamu ingat uang yang aku pinjam 20 ribu itu?
+
+Aku sengaja meminjamnya.
+Dan ketika kamu menagih — aku pura-pura tidak peduli.
+Bukan karena aku pelit.
+Bukan karena aku lupa.
+
+Tapi karena...
+itu adalah satu-satunya cara yang aku tahu
+untuk membuatmu tidak benar-benar melupakanku.
+
+Selama ada hutang itu, ada alasanmu untuk mengingatku.
+
+Bodoh, bukan?
+Tapi itulah aku —
+seseorang yang terlalu pengecut untuk berkata:
+"Tolong jangan lupakan aku."</textarea>
+      </div>
+      <div class="note-preview-box" id="note-preview"></div>
+    </div>
+
+    <!-- ── Panel: Settings ── -->
+    <div class="panel" id="panel-settings" role="tabpanel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-title">Pengaturan</div>
+          <div class="panel-sub">Konfigurasi konten & integrasi</div>
+        </div>
+        <button class="btn btn-success btn-sm" onclick="saveSettings()">
+          <svg viewBox="0 0 24 24"><use href="#ic-save"/></svg>
+          Simpan
+        </button>
+      </div>
+
+      <!-- Content settings -->
+      <div class="settings-group">
+        <div class="settings-group-title">
+          <svg viewBox="0 0 24 24"><use href="#ic-rose"/></svg>
+          Konten Utama
+        </div>
+        <div class="form-group">
+          <label>Judul Website</label>
+          <input id="s-title" type="text" placeholder="Untuk Lina">
+        </div>
+        <div class="form-group">
+          <label>Subtitle</label>
+          <input id="s-sub" type="text" placeholder="Sebuah penyesalan yang terlambat...">
+        </div>
+        <div class="form-group">
+          <label>Pesan Pembuka</label>
+          <textarea id="s-cover" rows="3" placeholder="Pesan di layar pembuka..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Pesan Penutup</label>
+          <textarea id="s-closing" rows="3" placeholder="Pesan penutup..."></textarea>
+        </div>
+      </div>
+
+      <!-- Popup photo -->
+      <div class="settings-group">
+        <div class="settings-group-title">
+          <svg viewBox="0 0 24 24"><use href="#ic-photo"/></svg>
+          Foto Popup (Fotomu)
+        </div>
+        <div class="form-group">
+          <div class="upload-area">
+            <input type="file" id="popup-photo-file" accept="image/*"
+                   onchange="handleFile('popup-photo-file','popup-photo-preview','image')">
+            <span class="upload-icon"><svg viewBox="0 0 24 24"><use href="#ic-image"/></svg></span>
+            <span class="upload-text">Ketuk untuk upload foto</span>
+          </div>
+          <div class="upload-preview" id="popup-photo-preview"></div>
+        </div>
+        <div class="form-group">
+          <label>Atau path / URL manual</label>
+          <input id="s-popup-photo" type="text" inputmode="url" placeholder="img/my-photo.jpg">
+        </div>
+      </div>
+
+      <!-- Telegram -->
+      <div class="settings-group">
+        <div class="settings-group-title">
+          <svg viewBox="0 0 24 24"><use href="#ic-tg"/></svg>
+          Integrasi Telegram
+        </div>
+        <p style="font-family:var(--font-h);font-style:italic;color:var(--t3);font-size:.83rem;margin-bottom:1rem;">
+          Respon popup Lina akan dikirim ke bot Telegram kamu.
+        </p>
+        <div class="form-group">
+          <label>Bot Token</label>
+          <input id="s-tg-token" type="text" inputmode="text" placeholder="123456:ABCdef..." autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Chat ID</label>
+          <input id="s-tg-chat" type="text" inputmode="numeric" placeholder="Chat ID kamu">
+        </div>
+        <button class="btn btn-ghost btn-sm" onclick="testTelegram()">
+          <svg viewBox="0 0 24 24"><use href="#ic-test"/></svg>
+          Test Kirim Pesan
+        </button>
+      </div>
+
+      <!-- Danger zone -->
+      <div class="settings-group">
+        <div class="settings-group-title">
+          <svg viewBox="0 0 24 24"><use href="#ic-reset"/></svg>
+          Data
+        </div>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+          <button class="btn btn-ghost btn-sm" onclick="exportData()">
+            <svg viewBox="0 0 24 24"><use href="#ic-export"/></svg>
+            Export JSON
+          </button>
+          <button class="btn btn-danger btn-sm" onclick="resetData()">
+            <svg viewBox="0 0 24 24"><use href="#ic-reset"/></svg>
+            Reset Data
+          </button>
+        </div>
+      </div>
+
+      <!-- View site link -->
+      <a href="index.html" target="_blank" class="btn btn-ghost" style="margin-top:.5rem;width:100%;text-decoration:none;">
+        <svg viewBox="0 0 24 24"><use href="#ic-eye"/></svg>
+        Lihat Website
+      </a>
+    </div>
+
+  </main>
+</div>
+
+<!-- ════════════════════════════════════════
+     STORY MODAL (bottom sheet)
+     ════════════════════════════════════════ -->
+<div class="modal-overlay" id="story-modal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-head">
+      <span class="modal-title" id="story-modal-title">Tambah Cerita</span>
+      <button class="btn btn-icon btn-ghost btn-sm" onclick="closeModal('story-modal')" aria-label="Tutup">
+        <svg viewBox="0 0 24 24"><use href="#ic-close"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form id="story-form" onsubmit="return false">
+        <div class="form-group">
+          <label>Judul Cerita *</label>
+          <input id="sf-title" type="text" placeholder="Awal yang Tidak Terduga" required>
+        </div>
+        <div class="form-group">
+          <label>Tanggal / Label Waktu</label>
+          <input id="sf-date" type="text" placeholder="28 Juli 2024">
+        </div>
+        <div class="form-group">
+          <label>Teks Cerita *</label>
+          <textarea id="sf-text" rows="6" placeholder="Tulis ceritamu di sini..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label>Upload Audio</label>
+          <div class="upload-area">
+            <input type="file" id="sf-audio-file" accept="audio/*"
+                   onchange="handleFile('sf-audio-file','sf-audio-prev','audio')">
+            <span class="upload-icon"><svg viewBox="0 0 24 24"><use href="#ic-music"/></svg></span>
+            <span class="upload-text">Ketuk untuk upload audio (MP3, M4A)</span>
+          </div>
+          <div class="upload-preview" id="sf-audio-prev"></div>
+          <input id="sf-audio-path" type="text" inputmode="url" placeholder="Atau path: audio/story1.mp3" style="margin-top:.5rem;">
+        </div>
+        <div class="form-group">
+          <label>Upload Gambar (opsional)</label>
+          <div class="upload-area">
+            <input type="file" id="sf-img-file" accept="image/*"
+                   onchange="handleFile('sf-img-file','sf-img-prev','image')">
+            <span class="upload-icon"><svg viewBox="0 0 24 24"><use href="#ic-image"/></svg></span>
+            <span class="upload-text">Ketuk untuk upload gambar</span>
+          </div>
+          <div class="upload-preview" id="sf-img-prev"></div>
+          <input id="sf-img-path" type="text" inputmode="url" placeholder="Atau path: img/story1.jpg" style="margin-top:.5rem;">
+        </div>
+      </form>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" onclick="closeModal('story-modal')">Batal</button>
+      <button class="btn btn-success" onclick="saveStory()">
+        <svg viewBox="0 0 24 24"><use href="#ic-save"/></svg>
+        Simpan
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     GALLERY MODAL
+     ════════════════════════════════════════ -->
+<div class="modal-overlay" id="gallery-modal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-head">
+      <span class="modal-title" id="gallery-modal-title">Tambah Foto</span>
+      <button class="btn btn-icon btn-ghost btn-sm" onclick="closeModal('gallery-modal')" aria-label="Tutup">
+        <svg viewBox="0 0 24 24"><use href="#ic-close"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form id="gallery-form" onsubmit="return false">
+        <div class="form-group">
+          <label>Upload Foto *</label>
+          <div class="upload-area">
+            <input type="file" id="gf-img-file" accept="image/*"
+                   onchange="handleFile('gf-img-file','gf-img-prev','image')">
+            <span class="upload-icon"><svg viewBox="0 0 24 24"><use href="#ic-rose"/></svg></span>
+            <span class="upload-text">Ketuk untuk upload foto kenangan</span>
+          </div>
+          <div class="upload-preview" id="gf-img-prev"></div>
+          <input id="gf-src-path" type="text" inputmode="url" placeholder="Atau path: img/gallery1.jpg" style="margin-top:.5rem;">
+        </div>
+        <div class="form-group">
+          <label>Keterangan Foto</label>
+          <input id="gf-caption" type="text" placeholder="Kenangan yang tidak akan terlupakan">
+        </div>
+      </form>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" onclick="closeModal('gallery-modal')">Batal</button>
+      <button class="btn btn-success" onclick="saveGallery()">
+        <svg viewBox="0 0 24 24"><use href="#ic-save"/></svg>
+        Simpan
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="admin-toast" id="admin-toast" role="status" aria-live="polite"></div>
+
+<script src="js/admin.js"></script>
+<script>
+  // Enter key on login inputs
+  ['login-user','login-pass'].forEach(id => {
+    document.getElementById(id)?.addEventListener('keydown', e => {
+      if (e.key === 'Enter') doLogin();
+    });
+  });
+  // Note preview on load
+  window.addEventListener('load', () => {
+    const ta = document.getElementById('note-ta');
+    const pv = document.getElementById('note-preview');
+    if (ta && pv) pv.textContent = ta.value;
+  });
+</script>
+</body>
+</html>

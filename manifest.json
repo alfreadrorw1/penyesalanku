@@ -1,0 +1,31 @@
+{
+  "name": "Untuk Lina",
+  "short_name": "Lina",
+  "description": "Sebuah penyesalan yang terlambat, namun tulus dari lubuk hati yang paling dalam.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0c0709",
+  "theme_color": "#0c0709",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["lifestyle"],
+  "lang": "id"
+}

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- ── Viewport: critical for mobile ── -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+
+  <!-- ── Theme color (Android chrome bar + iOS) ── -->
+  <meta name="theme-color" content="#0c0709">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Untuk Lina">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <!-- ── SEO / share ── -->
+  <title>Untuk Lina — Dari Seseorang yang Seharusnya Tidak Pergi</title>
+  <meta name="description" content="Sebuah penyesalan yang terlambat, namun tulus dari lubuk hati yang paling dalam.">
+
+  <!-- ── PWA Manifest ── -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- ── iOS icons ── -->
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+
+  <!-- ── Fonts ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Pinyon+Script&display=swap">
+
+  <!-- ── Styles ── -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ── Inline SVG sprites (no external requests, no emoji) ── -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" id="svg-sprite">
+    <!-- heart filled -->
+    <symbol id="ic-heart" viewBox="0 0 24 24">
+      <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/>
+    </symbol>
+    <!-- heart outline -->
+    <symbol id="ic-heart-o" viewBox="0 0 24 24">
+      <path d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"/>
+    </symbol>
+    <!-- rose (stylized) -->
+    <symbol id="ic-rose" viewBox="0 0 24 24">
+      <path d="M12 2C9 2 7 4 7 7c0 2.5 1.5 4.5 3.5 5.5L9 22h6l-1.5-9.5C15.5 11.5 17 9.5 17 7c0-3-2-5-5-5zm0 2c1.7 0 3 1.3 3 3 0 1.8-1.2 3.3-2.9 3.9L12 16l-.1-5.1C10.2 10.3 9 8.8 9 7c0-1.7 1.3-3 3-3z"/>
+    </symbol>
+    <!-- music note -->
+    <symbol id="ic-music" viewBox="0 0 24 24">
+      <path d="M9 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3H9zm-2 17c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+    </symbol>
+    <!-- music muted -->
+    <symbol id="ic-music-off" viewBox="0 0 24 24">
+      <path d="M4.27 3L3 4.27l9 9c-.28.49-.44 1.03-.44 1.63 0 1.84 1.49 3.33 3.33 3.33 1.84 0 3.33-1.49 3.33-3.33 0-1.84-1.49-3.33-3.33-3.33-.22 0-.43.02-.63.07L6.85 4.11C7.41 3.42 8.2 3 9.14 3H16v8.18l2 2V1H9.14c-.78 0-1.52.24-2.14.65L4.27 3zm7.73 14c-.73 0-1.33-.6-1.33-1.33s.6-1.33 1.33-1.33 1.33.6 1.33 1.33-.6 1.33-1.33 1.33zM1 4.27L2.27 3 21 21.73 19.73 23 1 4.27z"/>
+    </symbol>
+    <!-- play -->
+    <symbol id="ic-play" viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7z"/>
+    </symbol>
+    <!-- pause -->
+    <symbol id="ic-pause" viewBox="0 0 24 24">
+      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+    </symbol>
+    <!-- close / x -->
+    <symbol id="ic-close" viewBox="0 0 24 24">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    </symbol>
+    <!-- book / stories -->
+    <symbol id="ic-book" viewBox="0 0 24 24">
+      <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+    </symbol>
+    <!-- image / gallery -->
+    <symbol id="ic-image" viewBox="0 0 24 24">
+      <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+    </symbol>
+    <!-- note / memo -->
+    <symbol id="ic-note" viewBox="0 0 24 24">
+      <path d="M3 18h12v-2H3v2zm0-5h12v-2H3v2zm0-7v2h12V6H3zm14 10.59L19.17 14l1.42 1.41-4.59 4.59-2.83-2.83 1.41-1.41L17 16.59z"/>
+    </symbol>
+    <!-- home -->
+    <symbol id="ic-home" viewBox="0 0 24 24">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </symbol>
+    <!-- calendar -->
+    <symbol id="ic-cal" viewBox="0 0 24 24">
+      <path d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/>
+    </symbol>
+    <!-- diamond/divider -->
+    <symbol id="ic-diamond" viewBox="0 0 24 24">
+      <path d="M12 1L3 9.5 12 23l9-13.5L12 1zm0 3.4l6.3 9.1H5.7L12 4.4z"/>
+    </symbol>
+    <!-- chevron down (scroll) -->
+    <symbol id="ic-chevron-down" viewBox="0 0 24 24">
+      <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+    </symbol>
+    <!-- person (popup placeholder) -->
+    <symbol id="ic-person" viewBox="0 0 24 24">
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+    </symbol>
+    <!-- thumb up -->
+    <symbol id="ic-thumb-up" viewBox="0 0 24 24">
+      <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z"/>
+    </symbol>
+    <!-- thumb down -->
+    <symbol id="ic-thumb-down" viewBox="0 0 24 24">
+      <path d="M15 3H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v1.91l.01.01L1 14c0 1.1.9 2 2 2h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 23l6.59-6.59c.36-.36.58-.86.58-1.41V5c0-1.1-.9-2-2-2zm4 0v12h4V3h-4z"/>
+    </symbol>
+    <!-- check done -->
+    <symbol id="ic-check" viewBox="0 0 24 24">
+      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+    </symbol>
+    <!-- broken heart -->
+    <symbol id="ic-heart-break" viewBox="0 0 24 24">
+      <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457l-2 3 3-1.5-2 5 3-2-1 4.636z"/>
+    </symbol>
+  </svg>
+
+  <style>
+    /* tiny inline: hide body until fonts ready to avoid FOUT flash */
+    body { opacity: 0; transition: opacity .3s ease; }
+    body.ready { opacity: 1; }
+  </style>
+</head>
+<body>
+
+  <!-- ── Bubbles layer ── -->
+  <div id="love-bubbles" aria-hidden="true"></div>
+
+  <!-- ── Ambient particles ── -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- ══════════════════════════════════════
+       OPENING SCREEN
+       ══════════════════════════════════════ -->
+  <div id="opening-screen" role="dialog" aria-modal="true" aria-label="Surat untuk Lina">
+    <div class="opening-vignette" aria-hidden="true"></div>
+    <div class="opening-content">
+
+      <div class="opening-rose-wrap" aria-hidden="true">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="#e87a8f">
+          <path d="M12 2C9 2 7 4 7 7c0 2.5 1.5 4.5 3.5 5.5L9 22h6l-1.5-9.5C15.5 11.5 17 9.5 17 7c0-3-2-5-5-5zm0 2c1.7 0 3 1.3 3 3 0 1.8-1.2 3.3-2.9 3.9L12 16l-.1-5.1C10.2 10.3 9 8.8 9 7c0-1.7 1.3-3 3-3z"/>
+        </svg>
+      </div>
+
+      <h1 class="opening-name">Lina</h1>
+      <p class="opening-sub">Sebuah surat yang terlambat</p>
+      <p class="opening-message">
+        Ada hal-hal yang tidak sempat aku katakan...<br>
+        dan hal-hal yang seharusnya tidak aku lakukan.<br>
+        Ini adalah keduanya.
+      </p>
+
+      <button class="btn-enter" id="btn-enter">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"/></svg>
+        Buka Surat Ini
+      </button>
+    </div>
+
+    <p class="opening-date-bar" aria-label="28 Juli 2024 hingga 28 Januari 2025">
+      28.07.2024 &nbsp;—&nbsp; 28.01.2025
+    </p>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       TOP NAV
+       ══════════════════════════════════════ -->
+  <header class="top-nav" id="top-nav" role="banner">
+    <a href="#hero" class="nav-logo" aria-label="Untuk Lina — kembali ke atas">Lina</a>
+    <a href="admin.html" aria-label="Admin dashboard" style="color:var(--t3);display:flex;align-items:center;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+      </svg>
+    </a>
+  </header>
+
+  <!-- ══════════════════════════════════════
+       BOTTOM NAV
+       ══════════════════════════════════════ -->
+  <nav class="bottom-nav" role="navigation" aria-label="Navigasi utama">
+    <a class="bottom-nav-item active" href="#hero" data-section="hero" aria-label="Beranda">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-home"/></svg>
+      <span>Beranda</span>
+    </a>
+    <a class="bottom-nav-item" href="#stories" data-section="stories" aria-label="Cerita">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-book"/></svg>
+      <span>Cerita</span>
+    </a>
+    <a class="bottom-nav-item" href="#gallery" data-section="gallery" aria-label="Kenangan">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-image"/></svg>
+      <span>Kenangan</span>
+    </a>
+    <a class="bottom-nav-item" href="#note" data-section="note" aria-label="Catatan">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-note"/></svg>
+      <span>Catatan</span>
+    </a>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       HERO
+       ══════════════════════════════════════ -->
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-img" id="hero-img" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Sebuah pengakuan yang jujur</p>
+      <h2 class="hero-title" id="hero-title">Untuk <span>Lina</span></h2>
+      <p class="hero-sub" id="hero-sub">Sebuah penyesalan yang terlambat, namun tulus dari lubuk hati yang paling dalam</p>
+      <div class="hero-dates" aria-label="Tanggal hubungan: 28 Juli 2024 sampai 28 Januari 2025">
+        <span class="hero-date">28 Juli 2024</span>
+        <svg class="hero-date-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-heart"/></svg>
+        <span class="hero-date">28 Jan 2025</span>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span class="scroll-label">Gulir ke bawah</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       STORIES
+       ══════════════════════════════════════ -->
+  <section id="stories" aria-labelledby="stories-heading">
+    <div class="section-pad stories-wrap">
+      <header class="section-header reveal">
+        <span class="section-eyebrow">Kisah Kita</span>
+        <h2 class="section-title" id="stories-heading">Cerita yang Harus Kamu Tahu</h2>
+        <div class="divider" aria-hidden="true">
+          <div class="divider-line"></div>
+          <svg class="divider-icon" viewBox="0 0 24 24"><use href="#ic-diamond"/></svg>
+          <div class="divider-line"></div>
+        </div>
+      </header>
+      <div id="stories-container"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       NOTE
+       ══════════════════════════════════════ -->
+  <section id="note" aria-labelledby="note-heading">
+    <div class="section-pad">
+      <header class="section-header reveal">
+        <span class="section-eyebrow">Catatan Tersembunyi</span>
+        <h2 class="section-title" id="note-heading">Sebuah Pengakuan</h2>
+        <div class="divider" aria-hidden="true">
+          <div class="divider-line"></div>
+          <svg class="divider-icon" viewBox="0 0 24 24"><use href="#ic-heart-o"/></svg>
+          <div class="divider-line"></div>
+        </div>
+      </header>
+
+      <div class="note-card reveal" id="note-card">
+        <p class="note-text" id="note-text">
+          Apakah kamu ingat <strong>uang yang aku pinjam 20 ribu</strong> itu?<br><br>
+          Aku <em>sengaja</em> meminjamnya.<br><br>
+          Dan ketika kamu menagih — aku pura-pura tidak peduli.<br>
+          Bukan karena aku pelit.<br>
+          Bukan karena aku lupa.<br><br>
+          Tapi karena...<br>
+          itu adalah satu-satunya cara yang aku tahu<br>
+          untuk membuatmu <strong>tidak benar-benar melupakanku.</strong><br><br>
+          Selama ada hutang itu, ada alasanmu untuk mengingatku.<br><br>
+          <em>Bodoh, bukan?</em><br>
+          Tapi itulah aku —<br>
+          seseorang yang terlalu pengecut untuk berkata:<br>
+          <strong>"Tolong jangan lupakan aku."</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       GALLERY
+       ══════════════════════════════════════ -->
+  <section id="gallery" aria-labelledby="gallery-heading">
+    <div class="section-pad">
+      <header class="section-header reveal">
+        <span class="section-eyebrow">Galeri Kenangan</span>
+        <h2 class="section-title" id="gallery-heading">Momen yang Tidak Bisa Dihapus</h2>
+        <div class="divider" aria-hidden="true">
+          <div class="divider-line"></div>
+          <svg class="divider-icon" viewBox="0 0 24 24"><use href="#ic-rose"/></svg>
+          <div class="divider-line"></div>
+        </div>
+      </header>
+      <div class="gallery-grid" id="gallery-container"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       CLOSING
+       ══════════════════════════════════════ -->
+  <section class="closing-section">
+    <div class="closing-rose reveal" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><use href="#ic-rose"/></svg>
+    </div>
+    <h2 class="closing-title reveal">Maafkan Aku, Lina</h2>
+    <p class="closing-msg reveal" id="closing-message">
+      Maafkan aku, Lina. Bukan karena aku memintanya — tapi karena kamu layak untuk bebas dari rasa sakit yang aku buat.
+    </p>
+    <p class="closing-sig reveal">— Seseorang yang menyesal</p>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+       ══════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <p class="footer-text">
+      Dibuat dengan penyesalan yang tulus, bukan untuk memintamu kembali —<br>
+      tapi agar kamu tahu bahwa kamu pernah sangat berarti.
+    </p>
+    <p class="footer-dates">
+      28.07.2024
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ic-heart"/></svg>
+      28.01.2025
+    </p>
+  </footer>
+
+  <!-- ══════════════════════════════════════
+       LIGHTBOX
+       ══════════════════════════════════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Lihat foto">
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+    <p class="lightbox-cap" id="lightbox-cap"></p>
+    <button class="lightbox-close" id="lightbox-close" aria-label="Tutup">
+      <svg viewBox="0 0 24 24"><use href="#ic-close"/></svg>
+    </button>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       POPUP (bottom sheet)
+       ══════════════════════════════════════ -->
+  <div class="popup-overlay" id="popup-overlay" role="dialog" aria-modal="true" aria-label="Pertanyaan untuk Lina">
+    <div class="popup-sheet" id="popup-sheet">
+      <div class="popup-handle" aria-hidden="true"></div>
+
+      <div class="popup-photo-ph" id="popup-photo-ph" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><use href="#ic-person"/></svg>
+      </div>
+      <img id="popup-photo" class="popup-photo" src="" alt="Foto" style="display:none">
+
+      <h3 class="popup-title">Hei, Lina...</h3>
+      <p class="popup-msg">Apakah kamu suka dengan apa yang aku buat untukmu? <em>Tolong jujur...</em></p>
+
+      <div id="popup-buttons" class="popup-btns">
+        <button class="popup-btn yes" onclick="handlePopupResponse(true)" aria-label="Suka">
+          <svg viewBox="0 0 24 24"><use href="#ic-thumb-up"/></svg>
+          Suka
+        </button>
+        <button class="popup-btn no" onclick="handlePopupResponse(false)" aria-label="Tidak suka">
+          <svg viewBox="0 0 24 24"><use href="#ic-thumb-down"/></svg>
+          Tidak
+        </button>
+      </div>
+
+      <div class="popup-thanks" id="popup-thanks">
+        <div class="popup-thanks-icon" id="popup-thanks-icon">
+          <svg viewBox="0 0 24 24"><use href="#ic-heart"/></svg>
+        </div>
+        <p class="popup-thanks-msg" id="popup-thanks-msg">Terima kasih, Lina...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       MUSIC FAB
+       ══════════════════════════════════════ -->
+  <button class="music-fab" id="music-btn" aria-label="Toggle musik latar" title="Musik">
+    <svg id="music-icon" viewBox="0 0 24 24"><use href="#ic-music-off"/></svg>
+  </button>
+  <audio id="bg-music" src="audio/background.mp3" loop preload="none"></audio>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Mark body ready after fonts loaded (prevents FOUT flash)
+    if (document.fonts) {
+      document.fonts.ready.then(() => document.body.classList.add('ready'));
+    } else {
+      document.body.classList.add('ready');
+    }
+  </script>
+</body>
+</html>

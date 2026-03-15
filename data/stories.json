@@ -1,0 +1,75 @@
+{
+  "title": "Untuk Lina — Dari Seseorang yang Seharusnya Tidak Pergi",
+  "subtitle": "Sebuah penyesalan yang terlambat, namun tulus dari lubuk hati yang paling dalam",
+  "coverMessage": "Kamu tidak perlu membaca ini jika kamu tidak mau... tapi aku harap kamu mau.",
+  "closingMessage": "Maafkan aku, Lina. Bukan karena aku memintanya — tapi karena kamu layak untuk bebas dari rasa sakit yang aku buat.",
+  "telegramBotToken": "8118603438:AAE4CCUE_VMVSSIWxWu5heAW5JwkS72wSRM",
+  "telegramChatId": "8118603438",
+  "popupPhoto": "img/my-photo.jpg",
+  "stories": [
+    {
+      "id": 1,
+      "title": "Awal yang Tidak Terduga",
+      "text": "Kita pertama kali bertemu di Telegram — dua orang asing yang tidak tahu bahwa percakapan kecil itu akan mengubah segalanya. Kamu mungkin tidak ingat pesan pertamamu padaku... tapi aku ingat setiap katanya. Setiap hurufnya. Setiap jeda di antara balasanmu yang membuatku menunggu dengan jantung berdegup.",
+      "audio": "audio/story1.mp3",
+      "image": "img/story1.jpg",
+      "date": "Suatu Hari di 2024"
+    },
+    {
+      "id": 2,
+      "title": "Dari Telegram ke WhatsApp",
+      "text": "Lalu kita pindah ke WhatsApp — dan entah mengapa, itu terasa seperti langkah besar. Seperti kita memilih untuk lebih dekat. Nomor itu aku simpan dengan nama yang aku ganti beberapa kali, mencari nama yang paling terasa pas untukmu. Tidak ada yang cukup indah.",
+      "audio": "audio/story2.mp3",
+      "image": "img/story2.jpg",
+      "date": "Masih di 2024"
+    },
+    {
+      "id": 3,
+      "title": "Momen 28 Juli 2024",
+      "text": "Aku menembakmu dengan sebuah sound Jepang — cara paling pengecut dan paling jujur yang pernah aku lakukan seumur hidup. Aku terlalu takut mengatakannya langsung, tapi perasaan itu terlalu besar untuk disimpan. Kamu bilang iya. Dan dunia terasa seperti berhenti sebentar — hanya untuk kita berdua.",
+      "audio": "audio/story3.mp3",
+      "image": "img/story3.jpg",
+      "date": "28 Juli 2024 — Hari Kita Mulai"
+    },
+    {
+      "id": 4,
+      "title": "Hari-Hari yang Aku Sia-Siakan",
+      "text": "Kita punya waktu enam bulan. Enam bulan yang seharusnya aku isi dengan hal-hal yang membuatmu merasa dicintai. Tapi aku terlalu sibuk dengan egoku sendiri — terlalu keras kepala untuk mengakui bahwa aku butuhmu lebih dari yang aku tunjukkan. Maafkan aku untuk setiap hari yang aku buang sia-sia.",
+      "audio": "audio/story4.mp3",
+      "image": "img/story4.jpg",
+      "date": "Juli 2024 — Januari 2025"
+    },
+    {
+      "id": 5,
+      "title": "Rahasia Tentang 20 Ribu",
+      "text": "Apakah kamu ingat uang yang aku pinjam 20 ribu itu? Aku sengaja meminjamnya. Dan ketika kamu menagih — aku pura-pura tidak peduli. Bukan karena aku pelit. Bukan karena aku lupa. Tapi karena... itu adalah satu-satunya cara yang aku tahu untuk membuatmu tidak benar-benar melupakanku. Selama ada hutang itu, ada alasanmu untuk mengingatku. Bodoh, bukan? Tapi itulah aku — seseorang yang terlalu pengecut untuk berkata 'tolong jangan lupakan aku.'",
+      "audio": "audio/story5.mp3",
+      "image": "img/story5.jpg",
+      "date": "Suatu Hari yang Aku Ingat"
+    },
+    {
+      "id": 6,
+      "title": "28 Januari 2025 — Hari yang Menghancurkan",
+      "text": "Tanggal 28 lagi. Sepertinya tanggal 28 adalah milik kita — baik untuk memulai maupun untuk mengakhiri. Aku yang pergi. Aku yang memilih ego di atas kamu. Dan sampai hari ini, tidak ada satu pun keputusan dalam hidupku yang lebih aku sesali dari itu. Kamu tidak bersalah. Tidak pernah.",
+      "audio": "audio/story6.mp3",
+      "image": "img/story6.jpg",
+      "date": "28 Januari 2025 — Hari Terakhir"
+    },
+    {
+      "id": 7,
+      "title": "Yang Ingin Aku Katakan Sekarang",
+      "text": "Lina — aku tidak memintamu untuk kembali. Aku hanya ingin kamu tahu bahwa kehilanganmu adalah pelajaran paling mahal yang pernah dibayar oleh egoku. Kamu adalah orang yang benar di waktu yang salah — bukan karena takdirnya, tapi karena aku tidak cukup berani untuk memilihmu lebih dari memilih kebodohanku sendiri. Semoga kamu bahagia. Sungguh.",
+      "audio": "audio/story7.mp3",
+      "image": "img/story7.jpg",
+      "date": "Hari Ini"
+    }
+  ],
+  "gallery": [
+    { "id": 1, "src": "img/gallery1.jpg", "caption": "Kenangan yang tidak akan pernah aku hapus" },
+    { "id": 2, "src": "img/gallery2.jpg", "caption": "Senyummu yang aku rindukan" },
+    { "id": 3, "src": "img/gallery3.jpg", "caption": "Momen kecil yang dulu terasa biasa" },
+    { "id": 4, "src": "img/gallery4.jpg", "caption": "Seandainya aku bisa kembali ke sini" },
+    { "id": 5, "src": "img/gallery5.jpg", "caption": "Ini milik kita berdua" },
+    { "id": 6, "src": "img/gallery6.jpg", "caption": "Yang tersisa hanya foto ini" }
+  ]
+}
